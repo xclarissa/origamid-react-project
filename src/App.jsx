@@ -1,18 +1,22 @@
-import React from "react"; 
-import UserPost from "./api/endpoints/UserPost";
-import TokenPost from "./api/endpoints/TokenPost";
-import './App.css'
-import PhotoPost from "./api/endpoints/PhotoPost";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import Login from "./components/Login/Login";
+import "./App.css";
 
 function App() {
   return (
     <div>
-      <h2>User Post</h2>
-      <UserPost />
-      <h2>Token Post</h2>
-      <TokenPost /> 
-      <h2>Photo Post</h2>
-      <PhotoPost />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login/*" element={<Login />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
