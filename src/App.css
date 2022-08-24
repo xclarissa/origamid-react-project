@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+
 * {
   box-sizing: border-box;
+  
 }
 
 body {
@@ -7,7 +10,7 @@ body {
   margin: 0px;
   color: #333;
   --type-first: Helvetica, Arial, sans-serif;
-  --type-second: "Spectral", Georgia;
+  --type-second: "Spectral", georgia;
   font-family: var(--type-first);
 }
 
@@ -47,4 +50,33 @@ input {
   max-width: 50rem; /*50 x 16px*/
   padding: 0 1rem;
   margin: 0 auto;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft 0.3s forwards;
+}
+
+.title {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #fb1;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
 }
