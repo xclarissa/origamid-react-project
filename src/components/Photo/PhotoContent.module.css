@@ -8,8 +8,13 @@
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
   opacity: 0;
-  transform: scale(.8);
-  animation: scaleUp .3s forwards;
+  transform: scale(0.8);
+  animation: scaleUp 0.3s forwards;
+}
+
+.single.photo {
+  grid-template-columns: 1fr;
+  height: auto;
 }
 
 @keyframes scaleUp {
@@ -19,17 +24,25 @@
   }
 }
 
-.img {
-  grid-row: 1/4;
-}
-
 .details {
   padding: 2rem 2rem 0 2rem;
 }
 
-.comments {
-  padding: 0 2rem;
+.single .details {
+  padding: 2rem 0px 0px 0px;
 }
+
+.img {
+  grid-row: 1/4;
+}
+
+.single .img {
+  grid-row: 1;
+  border-radius: .4rem;
+  overflow: hidden;
+}
+
+
 
 @media (max-width: 64rem) {
   .photo {
@@ -62,7 +75,7 @@
   width: 16px;
   height: 10px;
   margin-right: .5rem;
-  background: url('../../Assets/visualizacao-black.svg');
+  background: url('../../assets/visualizacao-black.svg');
 }
 
 .attributes {

@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
-import { ReactComponent as MinhasFotos } from "../../Assets/feed.svg";
-import { ReactComponent as Estatisticas } from "../../Assets/estatisticas.svg";
-import { ReactComponent as AdicionarFoto } from "../../Assets/adicionar.svg";
-import { ReactComponent as Sair } from "../../Assets/sair.svg";
+import { ReactComponent as MinhasFotos } from "../../assets/feed.svg";
+import { ReactComponent as Estatisticas } from "../../assets/estatisticas.svg";
+import { ReactComponent as AdicionarFoto } from "../../assets/adicionar.svg";
+import { ReactComponent as Sair } from "../../assets/sair.svg";
 import styles from "./UserHeaderNav.module.css";
 import useMedia from "../../hooks/useMedia";
 

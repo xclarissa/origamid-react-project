@@ -5,6 +5,7 @@ import LoginCreate from "../Login/LoginCreate";
 import LoginPasswordLost from "../Login/LoginPasswordLost";
 import LoginPasswordReset from "../Login/LoginPasswordReset";
 import { UserContext } from "../../contexts/UserContext";
+import NotFound from "../NotFound";
 import styles from "./Login.module.css";
 
 function Login() {
@@ -20,6 +21,7 @@ function Login() {
           <Route path="signup" element={<LoginCreate />} />
           <Route path="lost-password" element={<LoginPasswordLost />} />
           <Route path="resetar" element={<LoginPasswordReset />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </section>
