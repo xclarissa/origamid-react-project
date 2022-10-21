@@ -18,8 +18,8 @@ export function TOKEN_VALIDATE_POST(token) {
     options: {
       method: "POST",
       headers: {
-        Authorization: 'Bearer ' + token
-      }  
+        Authorization: "Bearer " + token,
+      },
     },
   };
 }
@@ -30,8 +30,8 @@ export function GET_USER(token) {
     options: {
       method: "GET",
       headers: {
-        Authorization: 'Bearer ' + token
-      } 
+        Authorization: "Bearer " + token,
+      },
     },
   };
 }
@@ -42,19 +42,19 @@ export function PHOTO_POST(formData, token) {
     options: {
       method: "POST",
       headers: {
-        Authorization: 'Bearer ' + token
+        Authorization: "Bearer " + token,
       },
       body: formData,
     },
   };
 }
 
-export function PHOTOS_GET({page, total, user}) {
+export function PHOTOS_GET({ page, total, user }) {
   return {
     url: API_URL + `/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
     options: {
-      method: "GET", 
-      cache: 'no-store',
+      method: "GET",
+      cache: "no-store",
     },
   };
 }
@@ -63,8 +63,8 @@ export function PHOTO_GET(id) {
   return {
     url: API_URL + `/api/photo/${id}`,
     options: {
-      method: "GET", 
-      cache: 'no-store',
+      method: "GET",
+      cache: "no-store",
     },
   };
 }
@@ -76,11 +76,11 @@ export function COMMENT_POST(id, body) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
       },
       body: JSON.stringify(body),
     },
-  }
+  };
 }
 
 export function PHOTO_DELETE(id) {
@@ -88,9 +88,47 @@ export function PHOTO_DELETE(id) {
     url: `${API_URL}/api/photo/${id}`,
     options: {
       method: "DELETE",
-      headers: { 
-        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
-      }, 
+      headers: {
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
     },
-  }
+  };
+}
+
+export function PASSWORD_LOST(body) {
+  return {
+    url: `${API_URL}/api/password/lost`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+
+export function PASSWORD_RESET(body) {
+  return {
+    url: `${API_URL}/api/password/reset`,
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+
+export function GET_STATS() {
+  return {
+    url: `${API_URL}/api/stats`,
+    options: {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+    },
+  };
 }

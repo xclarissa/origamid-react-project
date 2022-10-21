@@ -7,6 +7,7 @@ import useFetch from "../../hooks/useFetch";
 import { PHOTO_POST } from "../../api";
 import Error from "../Helper/Error"; 
 import { useNavigate } from "react-router-dom";
+import Head from "../Helper/Head";
 
 function UserPhotoPost() {
   const nome = useForm();
@@ -44,6 +45,7 @@ function UserPhotoPost() {
 
   return (
     <section className={`${styles.photoPost} animeLeft`}>
+      <Head title='Poste sua foto' />
       <form onSubmit={handleSubmit}>
         <Input type="text" label="Nome" name="nome" {...nome} />
         <Input type="number" label="Idade" name="idade" {...idade} />

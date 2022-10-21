@@ -1,6 +1,7 @@
 import React from "react";
 import FeedModal from "./FeedModal";
 import FeedPhotos from "./FeedPhotos";
+import PropTypes from "prop-types";
 
 function Feed({ user }) {
   const [modalPhoto, setModalPhoto] = React.useState(null);
@@ -35,11 +36,29 @@ function Feed({ user }) {
       {modalPhoto && (
         <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
       )}
+
+      {/* lembrar  de colocar key */}
       {pages.map((page) => (
-        <FeedPhotos user={user} page={page} setModalPhoto={setModalPhoto} setInfinite={setInfinite} />
+        <FeedPhotos
+          user={user}
+          page={page}
+          setModalPhoto={setModalPhoto}
+          setInfinite={setInfinite}
+        />
       ))}
     </div>
   );
 }
+
+Feed.defaultProps = {
+  user: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+  ]),
+};
+
+Feed.prototype = {
+  user: PropTypes.string.isRequired,
+};
 
 export default Feed;

@@ -9,6 +9,12 @@
   margin-bottom: 1rem;
 }
 
+@media (max-width: 40rem) {
+  .photoPost {
+    grid-template-columns: 1fr;
+  }
+}
+
 .file {
   margin-bottom: 1rem;
 }
@@ -22,7 +28,6 @@
 .preview::after {
   content: "";
   display: block;
-  height: 0%; 
-  /* padding-bottom: 80%; */
+  height: 0%;  
   padding-bottom: 100%;
 }
